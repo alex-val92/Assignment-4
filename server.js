@@ -5,12 +5,12 @@ const port = 3000;
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/images', express.static('src/app/images'));
 const products = [
-    {id: 1, name: "Bouquet 1", image:'c:\Users\aval0\Downloads\pexels-secret-garden-333350-931147 (1).jpg', price: 29.99, description: "A beautiful bouquet of flowers, fall special."},
-    {id: 2, name: "Bouquet 2", image:'c:\Users\aval0\Downloads\images.jpg', price: 39.99, description: "A vibrant red bouquet perfect for any occasion."},
-    {id: 3, name: "Bouquet 3", image:'c:\Users\aval0\Downloads\pexels-pixabay-35600.jpg', price: 24.99, description: "A cheerful yellow bouquet to brighten your day."},
-    {id: 4, name: "Bouquet 4", image:'c:\Users\aval0\Downloads\images (1).jpg', price: 34.99, description: "A mixed bouquet with a variety of purple and white flowers."},
+    {id: 1, name: "Bouquet 1", image:'bouquet1.jpg', price: 29.99, description: "A beautiful bouquet of flowers, fall special."},
+    {id: 2, name: "Bouquet 2", image:'bouquet2.jpg', price: 39.99, description: "A vibrant red bouquet perfect for any occasion."},
+    {id: 3, name: "Bouquet 3", image:'bouquet3.jpg', price: 24.99, description: "A cheerful yellow bouquet to brighten your day."},
+    {id: 4, name: "Bouquet 4", image:'bouquet4.jpg', price: 34.99, description: "A mixed bouquet with a variety of purple and white flowers."},
 ];
 let selectedProduct = null;
 
@@ -39,4 +39,5 @@ app.post('/api/submit-order', (req, res) => {
 });
 app.listen(port, () => {
     console.log('Backend server is running on http://localhost:' + port);
+
 });
